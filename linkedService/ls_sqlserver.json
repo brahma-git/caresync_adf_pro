@@ -1,0 +1,24 @@
+{
+	"name": "ls_sqlserver",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "sqlserver-databeli.database.windows.net",
+			"database": "sqldb-databeli",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sqladmin",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_keyvault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sqldb-password",
+				"secretVersion": "8b08015496054b00a5d8ca37f3f80d8e"
+			}
+		}
+	}
+}

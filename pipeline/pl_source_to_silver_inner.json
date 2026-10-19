@@ -406,6 +406,13 @@
 											"type": "DelimitedTextSource",
 											"storeSettings": {
 												"type": "AzureBlobFSReadSettings",
+												"recursive": false,
+												"modifiedDatetimeStart": {
+													"value": "@variables('watermark_value')",
+													"type": "Expression"
+												},
+												"wildcardFolderPath": "@activity('read table details').output.firstRow.source_path",
+												"wildcardFileName": "*",
 												"enablePartitionDiscovery": false
 											},
 											"formatSettings": {

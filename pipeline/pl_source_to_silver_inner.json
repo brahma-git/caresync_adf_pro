@@ -406,11 +406,6 @@
 											"type": "DelimitedTextSource",
 											"storeSettings": {
 												"type": "AzureBlobFSReadSettings",
-												"recursive": false,
-												"modifiedDatetimeStart": {
-													"value": "@variables('watermark_value')",
-													"type": "Expression"
-												},
 												"enablePartitionDiscovery": false
 											},
 											"formatSettings": {

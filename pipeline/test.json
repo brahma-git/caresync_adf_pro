@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "input_data_postgres",
+				"description": "this is a change in description",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {

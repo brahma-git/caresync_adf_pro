@@ -1,0 +1,12 @@
+{
+	"name": "adf1-databeli",
+	"properties": {
+		"globalParameters": {
+			"email_receipent": {
+				"type": "string",
+				"value": "brahmalearn1@gmail.com"
+			}
+		}
+	},
+	"location": "centralindia"
+}

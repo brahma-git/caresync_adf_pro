@@ -426,7 +426,7 @@
 						],
 						"policy": {
 							"timeout": "0.12:00:00",
-							"retry": 0,
+							"retry": 2,
 							"retryIntervalInSeconds": 30,
 							"secureOutput": false,
 							"secureInput": false
@@ -1038,6 +1038,23 @@
 										],
 										"scriptBlockExecutionTimeout": "02:00:00"
 									}
+								},
+								{
+									"name": "Update Pipeline as failed",
+									"type": "Fail",
+									"dependsOn": [
+										{
+											"activity": "silver_to_gold",
+											"dependencyConditions": [
+												"Failed"
+											]
+										}
+									],
+									"userProperties": [],
+									"typeProperties": {
+										"message": "the gold notebook failed",
+										"errorCode": "500"
+									}
 								}
 							]
 						}
@@ -1216,6 +1233,23 @@
 											}
 										],
 										"scriptBlockExecutionTimeout": "02:00:00"
+									}
+								},
+								{
+									"name": "Update Pipeline as failed",
+									"type": "Fail",
+									"dependsOn": [
+										{
+											"activity": "ingest from source to silver",
+											"dependencyConditions": [
+												"Failed"
+											]
+										}
+									],
+									"userProperties": [],
+									"typeProperties": {
+										"message": "inner pipeline failed",
+										"errorCode": "500"
 									}
 								}
 							]
